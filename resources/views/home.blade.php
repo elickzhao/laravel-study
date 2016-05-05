@@ -101,6 +101,10 @@
                 <td>OmniPay 微信支付方式测试--这个未完成 没有可以支付的公众号</td>
                 <td><a href="#">微信支付方式测试</a></td>
             </tr>
+            <tr>
+                <td>Laravel 缓存实例教程（一） —— 基于Memcached缓存驱动的配置</td>
+                <td><a href="#">微信支付方式测试</a></td>
+            </tr>
         </table>
     </div>
 @endsection
