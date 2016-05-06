@@ -103,7 +103,11 @@
             </tr>
             <tr>
                 <td>Laravel 缓存实例教程（一） —— 基于Memcached缓存驱动的配置</td>
-                <td><a href="#">微信支付方式测试</a></td>
+                <td><a href="http://localhost:8080/post">这个是在homestead下 所以要开启它</a></td>
+            </tr>
+            <tr>
+                <td>PyroCMS 用laravel 5.1开发的类似drupal的cms</td>
+                <td><a href="http://pyrocms.cc/">网站首页</a></td>
             </tr>
         </table>
     </div>
