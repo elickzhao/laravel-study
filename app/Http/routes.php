@@ -311,3 +311,24 @@ Route::post('password/reset', 'Auth\PasswordController@postReset');
 Route::get('testArtisan',function(){
     $exitcode = Artisan::call('elick:command',['name'=>'xwiwi','--mark'=>'?']);
 });
+
+//异常测试
+Route::group(['prefix'=>'exception','as'=>'exce::'],function(){
+    Route::get('/',['as'=>'e',function(){
+        return "异常实例---";
+    }]);
+
+    Route::get('modelException',function(){
+        $user = \App\User::findOrFail(100);
+        dd($user);
+    });
+
+    Route::get('error',function(){
+        $num = 1/0;
+    });
+
+    Route::get('http',function(){
+        //abort(404);
+        abort(403,'对不起,你无权访问该页面');
+    });
+});

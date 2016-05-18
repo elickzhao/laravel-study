@@ -109,6 +109,10 @@
                 <td>PyroCMS 用laravel 5.1开发的类似drupal的cms</td>
                 <td><a href="http://pyrocms.cc/">网站首页</a></td>
             </tr>
+            <tr>
+                <td>Laravel 5.1 中的异常处理器和HTTP异常处理实例教程</td>
+                <td><a href="{{ route('exce::e') }}">异常处理</a></td>
+            </tr>
         </table>
     </div>
 @endsection
