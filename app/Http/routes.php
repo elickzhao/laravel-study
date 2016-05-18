@@ -332,3 +332,6 @@ Route::group(['prefix'=>'exception','as'=>'exce::'],function(){
         abort(403,'对不起,你无权访问该页面');
     });
 });
+
+//日志测试
+Route::get('log','LogController@index');

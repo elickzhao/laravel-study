@@ -113,6 +113,10 @@
                 <td>Laravel 5.1 中的异常处理器和HTTP异常处理实例教程</td>
                 <td><a href="{{ route('exce::e') }}">异常处理</a></td>
             </tr>
+            <tr>
+                <td>基于 Laravel 集成的 Monolog 库对日志进行配置和记录</td>
+                <td><a href="{{ url('log') }}">日志演示</a></td>
+            </tr>
         </table>
     </div>
 @endsection
