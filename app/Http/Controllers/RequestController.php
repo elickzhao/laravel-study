@@ -7,6 +7,7 @@ use Illuminate\Http\Response;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 class RequestController extends Controller
 {
@@ -133,6 +134,48 @@ CREATE;
         }
         exit('文件上传成功!');
 
+    }
+
+    public function getFileupload1(){
+        $posUrl = 'fileupload1';
+        $csrf_field = csrf_field();
+        $html = <<<CREATE
+            <form action="$posUrl" method="POST" enctype="multipart/form-data">
+            $csrf_field
+            <input type="file" name="file"/><br><br>
+            <input type="submit" value="提交"/>
+            </form>
+CREATE;
+        return $html;
+    }
+
+    public function postFileupload1(Request $request){
+        if(!$request->hasFile('file')){
+            exit('上传文件为空!');
+        }
+        $file = $request->file('file');
+        if(!$file->isValid()){
+            exit('文件上传出错!');
+        }
+        $newFileName = md5(time().rand(0,1000)).'.'.$file->getClientOriginalExtension();
+        $savePath = 'test/'.$newFileName;
+        //这个是保存在storage里的
+//        $bytes = Storage::put($savePath,file_get_contents($file->getRealPath()));
+//        if(!Storage::exists($savePath)){
+//            exit('保存文件失败!');
+//        }
+//        header("Content-Type:".Storage::mimeType($savePath));
+        //echo Storage::get($savePath);
+
+        $disk = Storage::disk('my');
+        $disk->put($savePath,file_get_contents($file->getRealPath()));
+        if(!$disk->exists($savePath)){
+            exit('保存文件失败!');
+        }
+        //dump($disk);
+        //dump(public_path($savePath));
+        $aa = url("app/".$savePath);
+        echo "<img src='".$aa."' />";
     }
 
 }

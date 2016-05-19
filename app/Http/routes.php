@@ -335,3 +335,23 @@ Route::group(['prefix'=>'exception','as'=>'exce::'],function(){
 
 //日志测试
 Route::get('log','LogController@index');
+
+Route::get('file',function(){
+   $filePath = 'test';
+    //如果要获取某个目录下的所有文件，
+    //可以使用Storage门面提供的files或allFiles方法，
+    //两者的区别在于allFiles会返回所有嵌套子目录下的文件
+    //但是只能获取到storage/app下的目录里面的东西
+    //层级搞的public是搜不到的
+    $files = \Illuminate\Support\Facades\Storage::Files($filePath);
+    dump($files);
+
+    $dirPath = 'test/abc';
+    \Illuminate\Support\Facades\Storage::makeDirectory($dirPath);
+    $directories = \Illuminate\Support\Facades\Storage::directories('test');
+    dump($directories);
+    \Illuminate\Support\Facades\Storage::deleteDirectory($dirPath);
+    $directories = \Illuminate\Support\Facades\Storage::directories('test');
+    dump($directories);
+
+});

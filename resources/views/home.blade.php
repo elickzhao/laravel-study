@@ -121,6 +121,13 @@
                 <td>Laravel 5.1 定义事件、事件监听器以及触发事件实例教程</td>
                 <td><a href="http://localhost:8080/post">这个是在homestead下 所以要开启它</a></td>
             </tr>
+            <tr>
+                <td>使用 Laravel 5.1 的文件系统对文件进行存储、移动和删除操作</td>
+                <td>
+                    <a href="http://localhost:8080/file">查看文件,创建及删除目录</a><br>
+                    <a href="{{ 'request/fileupload1' }}">上传文件</a>
+                </td>
+            </tr>
         </table>
     </div>
 @endsection
