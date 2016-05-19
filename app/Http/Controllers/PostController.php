@@ -23,7 +23,7 @@ class PostController extends Controller
 
         $html = '<ul>';
         foreach($posts as $k => $post){
-            $html .= "<li><a herf=''".action('PostController@show',$k).">".$post['content']."</li>";
+            $html .= "<li><a herf='".action('PostController@show',$k)."'>".$post['content']."</li>";
         }
         $html .= "</ul>";
         return $html;

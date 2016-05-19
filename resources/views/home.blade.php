@@ -117,6 +117,10 @@
                 <td>基于 Laravel 集成的 Monolog 库对日志进行配置和记录</td>
                 <td><a href="{{ url('log') }}">日志演示</a></td>
             </tr>
+            <tr>
+                <td>Laravel 5.1 定义事件、事件监听器以及触发事件实例教程</td>
+                <td><a href="http://localhost:8080/post">这个是在homestead下 所以要开启它</a></td>
+            </tr>
         </table>
     </div>
 @endsection
