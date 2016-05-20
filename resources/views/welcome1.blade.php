@@ -38,8 +38,7 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Laravel 5</div>
-                <a href="" target="_blank"></a>
+                <div class="title">{{ trans('welcome.message') }}</div>
             </div>
         </div>
     </body>

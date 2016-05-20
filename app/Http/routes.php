@@ -355,3 +355,10 @@ Route::get('file',function(){
     dump($directories);
 
 });
+
+Route::get('/lang/{locale}',function($locale){
+    App::setLocale($locale);
+    return view('welcome1');
+});
+
+Route::get('mail/send','MailController@send');
