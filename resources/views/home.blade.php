@@ -134,12 +134,18 @@
                     <a target="_blank" href="{{ url('lang/cn') }}">中文多国语音</a>
                 </td>
             </tr>
-                      <tr>
+            <tr>
                 <td>在 Laravel 5.1 中使用SMTP驱动实现邮件发送（含附件和图片）详细教程</td>
                 <td>
-                    <a target="_blank" href="{{ url('mail/send') }}">中文多国语音</a>
+                    <a target="_blank" href="{{ url('mail/send') }}">发送邮件</a>
                 </td>
             </tr>
+            <tr>
+                <td>Laravel 队列系列 —— 基于 Redis 实现任务队列的基本配置和使用</td>
+                <td>
+                    <a target="_blank" href="http://localhost:8080/mail/sendReminderEmail/1">这个在虚拟机里哦</a>
+                </td>
+            </tr>            
         </table>
     </div>
 @endsection
