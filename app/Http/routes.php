@@ -362,3 +362,52 @@ Route::get('/lang/{locale}',function($locale){
 });
 
 Route::get('mail/send','MailController@send');
+
+Route::get('session',function(\Illuminate\Http\Request $request){
+    session(['site'=>'www.77677.com']);
+    $site = session('site');
+    echo $site;
+
+    session(['site.blog'=>'blog.77677.com']);
+    $site = session('site');
+    dump($site);
+
+    $session = $request->session()->all();
+    dump($session);
+
+    $request->session()->put('site', 'http://LaravelAcademy.org');
+    if($request->session()->has('site')){
+        $site = $request->session()->get('site');
+        $blog = $request->session()->get('blog','blog.dddd.com');  //第二个参数为默认值 如果不存在就会返回第二个参数
+        dump($site);
+        dump($blog);
+    }
+
+    //push推入 put是设置
+    $request->session()->push('site.xxx', 'http://LaravelAcademy.org');
+    $request->session()->push('site.xxx', 'Laravel学院');
+    if($request->session()->has('site')){
+        $site = $request->session()->get('site');
+        dump($site);
+    }
+    //和上面效果相同
+    //$request->session()->put('site.xxx', ['http://LaravelAcademy.org','Laravel学院']);
+
+    //pull 获取数据并删除
+    $siteid = $request->session()->pull('siteid','LaravelAcademy');
+    echo $siteid;
+
+    $siteid = $request->session()->get('siteid');
+    dump($siteid);
+
+    //删除用 forget
+    $request->session()->forget('site.xxx');
+    $site = $request->session()->get('site');
+    dump($site);
+
+    //一次性Session数据
+    // $request->session()->flash('message', '欢迎访问Laravel学院！'); //这个session用一次就会删除
+
+    //始终有效
+    //$request->session()->keep(['message']);
+});

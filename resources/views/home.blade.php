@@ -145,7 +145,13 @@
                 <td>
                     <a target="_blank" href="http://localhost:8080/mail/sendReminderEmail/1">这个在虚拟机里哦</a>
                 </td>
-            </tr>            
+            </tr>
+            <tr>
+                <td>Laravel 5.1 中 Session 数据存储、访问、删除及一次性Session实例教程</td>
+                <td>
+                    <a target="_blank" href="{{ url('session') }}">session测试</a>
+                </td>
+            </tr>
         </table>
     </div>
 @endsection
