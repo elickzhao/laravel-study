@@ -410,4 +410,7 @@ Route::get('session',function(\Illuminate\Http\Request $request){
 
     //始终有效
     //$request->session()->keep(['message']);
+    echo URL::asset('images/touxiang.jpg');
 });
+
+Route::controller('xss','XssController');

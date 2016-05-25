@@ -152,6 +152,12 @@
                     <a target="_blank" href="{{ url('session') }}">session测试</a>
                 </td>
             </tr>
+            <tr>
+                <td>在 Laravel 5 中使用 Purifier 扩展包集成 HTMLPurifier 防止 XSS 跨站攻击</td>
+                <td>
+                    <a target="_blank" href="{{ url('xss') }}">xss测试</a>
+                </td>
+            </tr>
         </table>
     </div>
 @endsection

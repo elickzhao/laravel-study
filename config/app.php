@@ -159,6 +159,9 @@ return [
         //自己的包
         Jai\Contact\ContactServiceProvider::class,
 
+        //防Xss攻击
+        Mews\Purifier\PurifierServiceProvider::class,
+
     ],
 
     /*
@@ -210,7 +213,7 @@ return [
         'Html'      => Illuminate\Html\HtmlFacade::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'TestClass' => App\Facades\TestClass::class,
-
+        'Purifier' => Mews\Purifier\Facades\Purifier::class,
     ],
 
 ];

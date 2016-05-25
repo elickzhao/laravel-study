@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.1.31 (LTS) on 2016-03-22.
+ * Generated for Laravel 5.1.31 (LTS) on 2016-05-24.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -13269,6 +13269,20 @@ namespace {
         public static function offsetUnset($key){
             //Method inherited from \DebugBar\DebugBar            
             return \Barryvdh\Debugbar\LaravelDebugbar::offsetUnset($key);
+        }
+        
+    }
+
+
+    class TestClass extends \App\Facades\TestClass{
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function doSomething(){
+            return \App\Facades\Test::doSomething();
         }
         
     }
